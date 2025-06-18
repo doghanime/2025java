@@ -1,32 +1,171 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!DOCTYPE html> <!-- 定義這是一個 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杜柏勳的個人網站</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            text-align: center;
-            font-family: sans-serif;
-        }
-        a {
-            color: white;
-            background-color: #2a4d8f;
-            padding: 10px 20px;
-            margin: 10px;
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" /> <!-- 設定字元編碼為 UTF-8，支援中文顯示 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 讓頁面在手機上適應寬度 -->
+  <title>杜柏勳的個人網站</title> <!-- 網頁標題 -->
+
+  <!-- 載入 Google Fonts 字型 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0; /* 移除預設外距 */
+      font-family: 'Roboto', sans-serif; /* 使用 Roboto 字體 */
+      background-color: #f5f8fa; /* 背景淡灰藍 */
+      color: #333; /* 深灰文字顏色 */
+    }
+
+    header {
+      background: linear-gradient(to right, #2a4d8f, #3c78d8); /* 漸層藍色背景 */
+      color: white; /* 白色文字 */
+      padding: 60px 20px 40px; /* 上下左右內距 */
+      text-align: center; /* 置中對齊 */
+      font-family: 'Montserrat', sans-serif; /* 標題字體 */
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em; /* 標題大小 */
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    nav {
+      background-color: #fff; /* 白色背景 */
+      display: flex; /* 使用 flex 排列導覽列 */
+      justify-content: center; /* 導覽列置中 */
+      flex-wrap: wrap; /* 小螢幕時可換行 */
+      gap: 16px; /* 元素間間距 */
+      padding: 16px 0; /* 上下內距 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 陰影 */
+    }
+
+    nav a {
+      text-decoration: none; /* 移除底線 */
+      color: #2a4d8f; /* 藍色文字 */
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 20px; /* 圓角按鈕 */
+      background-color: #eef3fc; /* 淺藍底 */
+      transition: all 0.3s; /* 滑鼠移入效果 */
+    }
+
+    nav a:hover {
+      background-color: #d9e4ff; /* 滑鼠移入改顏色 */
+    }
+
+    main {
+      max-width: 1200px; /* 最大寬度 */
+      margin: 40px auto; /* 置中 */
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* RWD 單欄到雙欄 */
+      gap: 32px; /* 欄間距 */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* 滑鼠移入浮起來 */
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
+      color: #2a4d8f;
+      font-size: 1.4em;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .quote {
+      font-style: italic; /* 斜體 */
+      background: #eef3fc;
+      padding: 15px;
+      border-left: 5px solid #3c78d8;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .timeline {
+      margin-top: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #2a4d8f;
+    }
+
+    .timeline div {
+      margin-bottom: 16px;
+    }
+
+    .timeline div span {
+      font-weight: bold;
+      color: #2a4d8f;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <h1>歡迎來到杜柏勳的個人網站</h1>
+  <header> <!-- 頁首區塊 -->
+    <h1>杜柏勳 DU Bai-xun</h1>
+    <p>南臺科技大學 資訊工程系｜5b0g0023@stust.edu.tw</p>
+  </header>
+
+  <nav> <!-- 導覽列區塊 -->
+    <a href="index.html">首頁</a>
     <a href="about.html">關於我</a>
-    <a href="research.html">研究與專案</a>
+    <a href="projects.html">作品展示</a>
     <a href="https://doghanime.github.io/aaa/">乘法表</a>
-    <a href="https://doghanime.github.io/watter/">Water Puzzle 遊戲</a>
+    <a href="https://doghanime.github.io/watter/">Water Puzzle</a>
     <a href="https://doghanime.github.io/65/">RGB 色彩塊</a>
+  </nav>
+
+  <main> <!-- 主要內容區塊 -->
+    <section class="card"> <!-- 左側卡片 -->
+      <h2>自我介紹</h2>
+      <p>我是一位資訊工程學生，課程內容主要是網頁設計、人工智慧應用。目前將課堂所學實際應用於專案中。</p>
+      <h2>經歷與專案</h2>
+      <ul>
+        <li>2025 - RGB 色彩互動工具開發</li>
+        <li>2025 - Water Puzzle 解謎遊戲製作</li>
+        <li>2025 - 個人履歷網站設計與部署</li>
+      </ul>
+      <h2>學歷</h2>
+      <ul>
+        <li>南臺科技大學 資訊工程系（五專）</li>
+      </ul>
+      <h2>我的一句話</h2>
+      <div class="quote">「努力不一定成功，但放棄一定很輕鬆。」</div>
+    </section>
+
+    <aside class="card"> <!-- 右側卡片 -->
+      <h2>聯絡資訊</h2>
+      <ul>
+        <li>電話：0912345678</li>
+        <li>家用：(06)22222222</li>
+        <li>Email：5b0g0023@stust.edu.tw</li>
+        <li><a href="https://github.com/doghanime" target="_blank">GitHub</a></li>
+      </ul>
+
+      <h2>學習歷程</h2>
+      <div class="timeline">
+        <div><span>2023 年底</span> 開始接觸 HTML / CSS，學習網頁排版與設計。</div>
+        <div><span>2024 年初</span> 開始練習 JavaScript，製作互動小工具。</div>
+        <div><span>2025 年</span> 完成個人作品網站並部署至 GitHub Pages。</div>
+      </div>
+    </aside>
+  </main>
 </body>
 </html>

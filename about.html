@@ -1,62 +1,86 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!DOCTYPE html> <!-- 定義 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我</title>
-    <style>
-        body {
-            background-color: #fff8f0;
-            font-family: sans-serif;
-            line-height: 1.8;
-            padding: 20px;
-        }
-        img {
-            width: 200px;
-            border-radius: 10px;
-        }
-        ul, ol {
-            margin-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" /> <!-- 設定字元編碼為 UTF-8，支援中文 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 手機裝置適應 -->
+  <title>關於我</title> <!-- 瀏覽器標籤上顯示的標題 -->
+
+  <!-- 載入 Google Fonts 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif; /* 使用 Roboto 字型 */
+      background-color: #f7f7f7; /* 背景顏色為淡灰色 */
+      margin: 0; /* 移除預設外距 */
+      padding: 0; /* 移除預設內距 */
+      color: #333; /* 深灰文字 */
+    }
+
+    header {
+      background-color: #2a4d8f; /* 深藍背景 */
+      color: white; /* 白色文字 */
+      padding: 40px 20px; /* 上下40px 左右20px */
+      text-align: center; /* 文字置中 */
+      font-family: 'Montserrat', sans-serif; /* 使用 Montserrat 字體 */
+    }
+
+    .container {
+      max-width: 800px; /* 最大寬度限制 */
+      margin: 30px auto; /* 垂直間距+水平置中 */
+      background: white; /* 白色卡片背景 */
+      border-radius: 12px; /* 圓角邊框 */
+      padding: 30px; /* 內距 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 卡片陰影 */
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif; /* 標題字型 */
+    }
+
+    ul {
+      padding-left: 20px; /* 列表內縮 */
+    }
+  </style>
 </head>
+
 <body>
-    <h2>👨‍💻 杜柏勳 DU Bai-xun</h2>
+  <header> <!-- 頁首區塊 -->
+    <h1>關於我</h1> <!-- 頁首標題 -->
+  </header>
 
-    <h3>📇 個人資訊</h3>
+  <div class="container"> <!-- 主要內文容器 -->
+
+    <h2>基本資料</h2>
     <ul>
-        <li>南臺科技大學 資訊工程系</li>
-        <li>電話：0912345678</li>
-        <li>Email：5b0g0023@stust.edu.tw</li>
-        <li><a href="https://github.com/doghanime" target="_blank">GitHub</a></li>
+      <li>姓名：杜柏勳</li>
+      <li>學校：南臺科技大學 資訊工程系</li>
+      <li>Email：5b0g0023@stust.edu.tw</li>
     </ul>
 
-    <h3>📝 自我介紹</h3>
-    <p>我是一位熱愛挑戰的資訊工程學生，專注於網頁設計、遊戲開發與人工智慧應用。目前致力於將課堂所學實際應用於專案中，累積實戰經驗並拓展技能。</p>
-
-    <h3>💼 工作 / 專案經驗</h3>
+    <h2>聯絡方式</h2>
     <ul>
-        <li>2025 年：開發 RGB 色彩塊互動網頁工具</li>
-        <li>2025 年：製作 Water Puzzle 遊戲，結合邏輯解謎與動畫</li>
-        <li>2025 年：個人網站架設與履歷整合</li>
+      <li>手機：0912345678</li>
+      <li>家用電話：(06)22222222</li>
+      <li>GitHub：
+        <a href="https://github.com/doghanime" target="_blank">doghanime</a> <!-- 另開 GitHub 個人頁面 -->
+      </li>
     </ul>
 
-    <h3>🎓 學歷</h3>
+    <h2>學歷</h2>
     <ul>
-        <li>南臺科技大學 資訊工程系（五專）</li>
+      <li>南臺科技大學 資訊工程系（五專）</li>
     </ul>
 
-    <h3>🛠️ 專業技能</h3>
+    <h2>興趣與專長</h2>
     <ul>
-        <li>HTML / CSS / JavaScript</li>
-        <li>Python（基礎資料分析、AI 應用）</li>
-        <li>Git / GitHub</li>
+      <li>健身</li>
+      <li>遊戲</li>
+      <li>學語言</li>
     </ul>
 
-    <h3>🏆 獎項與作品</h3>
-    <ul>
-        <li>校內網頁設計競賽入圍</li>
-        <li>RGB 色彩工具與遊戲展示網站（見首頁連結）</li>
-    </ul>
+  </div>
 </body>
+
 </html>

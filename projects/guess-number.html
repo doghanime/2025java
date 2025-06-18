@@ -1,0 +1,55 @@
+<!DOCTYPE html> <!-- 宣告這是一個 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+
+<head>
+  <meta charset="UTF-8"> <!-- 設定編碼為 UTF-8，支援中文顯示 -->
+  <title>猜數字遊戲</title> <!-- 頁面標題，會出現在瀏覽器分頁上 -->
+
+  <style>
+    body {
+      font-family: sans-serif; /* 設定使用無襯線字型 */
+      padding: 50px; /* 整體內距 */
+      text-align: center; /* 文字置中 */
+      background: #fdfdfd; /* 淺灰背景 */
+    }
+
+    input, button {
+      padding: 10px; /* 內距 */
+      font-size: 1em; /* 字體大小 */
+      margin: 10px; /* 外距 */
+    }
+
+    #message {
+      font-size: 1.5em; /* 顯示訊息的字變大 */
+      color: #2a4d8f; /* 設定訊息為藍色 */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>猜數字遊戲 (1~100)</h1> <!-- 遊戲標題 -->
+  <input type="number" id="guess" placeholder="輸入你的猜測" /> <!-- 使用者輸入數字 -->
+  <button onclick="checkGuess()">猜看看！</button> <!-- 按鈕，點擊會執行 checkGuess 函數 -->
+  <div id="message"></div> <!-- 顯示猜測結果的地方 -->
+
+  <script>
+    let answer = Math.floor(Math.random() * 100) + 1; // 產生 1~100 的隨機整數，作為答案
+
+    function checkGuess() {
+      let guess = parseInt(document.getElementById("guess").value); // 取得使用者輸入並轉為整數
+      let msg = document.getElementById("message"); // 取得顯示訊息的區塊
+
+      if (isNaN(guess)) {
+        msg.textContent = "請輸入數字！"; // 輸入不是數字時提示
+      } else if (guess < answer) {
+        msg.textContent = "太小了！"; // 猜的比答案小
+      } else if (guess > answer) {
+        msg.textContent = "太大了！"; // 猜的比答案大
+      } else {
+        msg.textContent = "恭喜你猜對了！答案是 " + answer; // 猜中時顯示正確答案
+      }
+    }
+  </script>
+</body>
+</html>

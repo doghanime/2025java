@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- 宣告這是一份 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+
+<head>
+  <meta charset="UTF-8"> <!-- 編碼設定為 UTF-8，支援中文顯示 -->
+  <title>倒數計時器</title> <!-- 網頁標題顯示在分頁上 -->
+
+  <style>
+    /* 整體頁面樣式 */
+    body {
+      font-family: sans-serif; /* 使用無襯線字體 */
+      text-align: center; /* 置中對齊內容 */
+      padding: 50px; /* 四周內距 */
+      background: #fefefe; /* 白色背景 */
+    }
+
+    /* 輸入框與按鈕樣式 */
+    input, button {
+      padding: 10px; /* 內距 */
+      font-size: 1em; /* 字體大小 */
+      margin: 10px; /* 上下外距 */
+    }
+
+    /* 顯示倒數時間的區塊樣式 */
+    #display {
+      font-size: 2em; /* 放大字體 */
+      margin-top: 20px; /* 上方空間 */
+      color: #2a4d8f; /* 深藍色文字 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 頁面標題 -->
+  <h1>倒數計時器</h1>
+
+  <!-- 使用者輸入倒數的秒數 -->
+  <input type="number" id="seconds" placeholder="輸入秒數" />
+
+  <!-- 按鈕點擊後觸發 startCountdown 函式 -->
+  <button onclick="startCountdown()">開始倒數</button>
+
+  <!-- 顯示倒數計時內容 -->
+  <div id="display"></div>
+
+  <script>
+    let timer; // 宣告一個變數用來儲存計時器 ID
+
+    // 定義倒數函式
+    function startCountdown() {
+      clearInterval(timer); // 清除之前的倒數（避免重複）
+
+      // 取得輸入的秒數並轉成整數
+      let sec = parseInt(document.getElementById("seconds").value);
+
+      const display = document.getElementById("display"); // 取得顯示區域
+
+      // 判斷輸入是否有效（不是數字或 <= 0）
+      if (isNaN(sec) || sec <= 0) {
+        display.textContent = "請輸入有效的秒數！";
+        return;
+      }
+
+      display.textContent = sec + " 秒"; // 顯示初始秒數
+
+      // 啟動每秒執行一次的倒數計時器
+      timer = setInterval(() => {
+        sec--; // 每次遞減一秒
+
+        if (sec > 0) {
+          display.textContent = sec + " 秒"; // 持續顯示秒數
+        } else {
+          display.textContent = "時間到！"; // 時間到顯示訊息
+          clearInterval(timer); // 停止倒數
+        }
+      }, 1000); // 每 1000 毫秒執行一次（即每秒）
+    }
+  </script>
+</body>
+</html>

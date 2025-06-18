@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!-- 定義 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 頁面語言設為繁體中文 -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- 設定編碼為 UTF-8 支援中文 -->
+  <title>簡易計算機</title> <!-- 網頁標題 -->
+
+  <style>
+    /* 整體頁面樣式 */
+    body {
+      font-family: sans-serif; /* 使用無襯線字體 */
+      display: flex; /* 使用 flex 排版 */
+      flex-direction: column; /* 垂直排列元素 */
+      align-items: center; /* 水平置中 */
+      margin-top: 100px; /* 頁面頂部空間 */
+    }
+
+    /* 輸入框樣式 */
+    input {
+      padding: 10px; /* 內距 */
+      margin: 5px; /* 外距 */
+      width: 100px; /* 輸入框寬度 */
+    }
+
+    /* 按鈕樣式 */
+    button {
+      padding: 10px 20px; /* 上下 10px、左右 20px */
+      margin-top: 10px; /* 按鈕上方留白 */
+    }
+
+    /* 結果顯示區塊樣式 */
+    #result {
+      margin-top: 20px; /* 上方空間 */
+      font-size: 1.5em; /* 字體放大 */
+      color: #2a4d8f; /* 深藍色文字 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 頁面標題 -->
+  <h2>簡易加法計算機</h2>
+
+  <!-- 第一個輸入框 -->
+  <input type="number" id="num1" placeholder="數字1" />
+
+  <!-- 第二個輸入框 -->
+  <input type="number" id="num2" placeholder="數字2" />
+  <br />
+
+  <!-- 按下按鈕後執行 calculate() 函式 -->
+  <button onclick="calculate()">相加</button>
+
+  <!-- 結果顯示區塊 -->
+  <div id="result"></div>
+
+  <script>
+    // 加法計算函式
+    function calculate() {
+      // 取得輸入數值並轉換為浮點數
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+
+      // 計算總和
+      const sum = a + b;
+
+      // 顯示結果
+      document.getElementById("result").textContent = `結果：${sum}`;
+    }
+  </script>
+</body>
+</html>

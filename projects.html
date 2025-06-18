@@ -1,0 +1,109 @@
+<!DOCTYPE html> <!-- 定義這是一個 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+
+<head>
+  <meta charset="UTF-8"> <!-- 設定編碼為 UTF-8，支援中文字 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式設計，適應手機畫面寬度 -->
+  <title>作品展示</title> <!-- 瀏覽器頁籤的標題 -->
+
+  <!-- 載入 Google Fonts 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif; /* 內文字體使用 Roboto */
+      background-color: #f7f7f7; /* 整體背景為淡灰色 */
+      margin: 0; /* 移除預設邊距 */
+      color: #333; /* 字體顏色為深灰 */
+    }
+
+    header {
+      background-color: #2a4d8f; /* 標題區塊背景為深藍 */
+      color: white; /* 標題文字為白色 */
+      padding: 40px 20px; /* 上下 40px，左右 20px 內距 */
+      text-align: center; /* 文字置中 */
+      font-family: 'Montserrat', sans-serif; /* 使用 Montserrat 字體當作標題字體 */
+    }
+
+    .container {
+      max-width: 1000px; /* 最大寬度限制為 1000px */
+      margin: 30px auto; /* 垂直外距 30px，水平置中 */
+      padding: 0 20px; /* 左右留 20px 空白 */
+      display: grid; /* 使用 CSS Grid 排版 */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 每一欄最小 300px，自動調整欄數 */
+      gap: 20px; /* 每張卡片間隔 20px */
+    }
+
+    .card {
+      background-color: white; /* 卡片背景為白色 */
+      border-radius: 12px; /* 邊角圓弧 */
+      padding: 20px; /* 內距 20px */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 卡片陰影效果 */
+      transition: transform 0.3s; /* 滑鼠移入時動畫 */
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* 滑鼠移入時整張卡片往上移 5px */
+    }
+
+    .card h3 {
+      margin-top: 0; /* 移除標題上方空白 */
+      color: #2a4d8f; /* 標題字為深藍色 */
+    }
+
+    .card p {
+      line-height: 1.6; /* 行高 1.6 倍 */
+    }
+
+    .card a.button {
+      display: inline-block; /* 讓按鈕可以設定寬高內距 */
+      margin-top: 10px; /* 上方留白 */
+      padding: 8px 14px; /* 按鈕內距 */
+      background-color: #2a4d8f; /* 藍底 */
+      color: white; /* 白字 */
+      border-radius: 6px; /* 圓角按鈕 */
+      text-decoration: none; /* 移除底線 */
+      transition: background-color 0.3s; /* 滑鼠移入顏色變化動畫 */
+    }
+
+    .card a.button:hover {
+      background-color: #1c3668; /* 滑鼠移入時按鈕變深色 */
+    }
+  </style>
+</head>
+
+<body>
+  <header> <!-- 網站頁首 -->
+    <h1>作品展示</h1> <!-- 主標題 -->
+    <p>這些是我使用 HTML/CSS/JavaScript 製作的簡單網頁小工具</p> <!-- 副標 -->
+  </header>
+
+  <div class="container"> <!-- 卡片總容器 -->
+
+    <div class="card"> <!-- 卡片 1：倒數計時器 -->
+      <h3>倒數計時器</h3>
+      <p>輸入秒數後開始倒數，時間到會顯示提示訊息。</p>
+      <a class="button" href="projects/countdown.html" target="_blank">執行作品</a> <!-- 開啟作品連結 -->
+    </div>
+
+    <div class="card"> <!-- 卡片 2：猜數字 -->
+      <h3>猜數字遊戲</h3>
+      <p>在 1 到 100 間猜一個數字，系統會提示你大或小直到猜中。</p>
+      <a class="button" href="projects/guess-number.html" target="_blank">執行作品</a>
+    </div>
+
+    <div class="card"> <!-- 卡片 3：數位時鐘 -->
+      <h3>數位時鐘</h3>
+      <p>顯示當前時間的綠色數位時鐘介面，自動更新。</p>
+      <a class="button" href="projects/digital-clock.html" target="_blank">執行作品</a>
+    </div>
+
+    <div class="card"> <!-- 卡片 4：計算機 -->
+      <h3>簡易計算機</h3>
+      <p>輸入兩個數字，自動計算總和並顯示。</p>
+      <a class="button" href="projects/calculator.html" target="_blank">執行作品</a>
+    </div>
+
+  </div>
+</body>
+</html>

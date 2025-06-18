@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- 宣告這是 HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- 設定網頁的字元編碼為 UTF-8，支援中文顯示 -->
+  <title>數位時鐘</title> <!-- 瀏覽器分頁標題 -->
+
+  <style>
+    body {
+      font-family: 'Arial'; /* 使用 Arial 字型 */
+      background: #111; /* 深色背景（幾乎是黑色） */
+      color: #0f0; /* 綠色文字，像駭客風格的終端機 */
+      display: flex; /* 使用 Flex 排版 */
+      justify-content: center; /* 水平置中內容 */
+      align-items: center; /* 垂直置中內容 */
+      height: 100vh; /* 高度佔滿整個視窗 */
+      margin: 0; /* 移除預設外距 */
+    }
+
+    h1 {
+      font-size: 4em; /* 放大文字到 4 倍標準大小 */
+      letter-spacing: 5px; /* 字與字之間間距 5px，更有數位鐘效果 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顯示時鐘的區塊，初始為 --:--:-- -->
+  <h1 id="clock">--:--:--</h1>
+
+  <script>
+    // 定義更新時鐘的函式
+    function updateClock() {
+      const now = new Date(); // 建立一個當前時間的 Date 物件
+      const clock = document.getElementById("clock"); // 取得 HTML 中的 clock 元素
+      clock.textContent = now.toLocaleTimeString(); // 將現在時間轉為 HH:MM:SS 格式文字
+    }
+
+    setInterval(updateClock, 1000); // 每 1000 毫秒（1 秒）執行一次 updateClock
+    updateClock(); // 立即執行一次，避免第一次畫面停留在 --:--:--
+  </script>
+</body>
+</html>
